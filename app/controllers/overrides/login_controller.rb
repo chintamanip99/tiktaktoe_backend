@@ -1,32 +1,34 @@
-class Overrides::SessionsController < Devise::SessionsController
+class Overrides::LoginController < Devise::SessionsController
 
   skip_before_action :verify_signed_out_user, only: :destroy
   def create
-    debugger
     @user = User
              .find_by(email: params["email"])
     if @user && @user.valid_for_authentication? { @user.valid_password?(params[:password]) }
-      sign_in(@user.class.name.downcase, @user)
-      @auth_user=current_user
+      sign_in(@user.class.name.downcase, @user, store: false)
+      @token = JwtWrapper.encode(
+        { sub: @user.id }
+      )
+      JwtCache.create(token: @token)
     end
   end
 
-  def logged_in
-    if @current_user
-      render json:{
-        logged_in:true,
-        user:@current_user
-      }
-    else
-      render json:{
-        logged_in:false
-      }
-    end
+  def destroy
+    @user = current_user
+    JwtCache.find_by_token(token)&.destroy
   end
 
-  def logout
-    render json:{
-      status:200,logged_out: true
-    }
+  private
+
+  def token
+    return nil if bearer_header.nil?
+    strategy, jwt_token = bearer_header.split(' ')
+    return nil if (strategy || '').downcase != 'bearer'
+    jwt_token
   end
+
+  def bearer_header
+    request.headers['Authorization']&.to_s
+  end
+
 end

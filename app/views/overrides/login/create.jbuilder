@@ -1,6 +1,6 @@
-if !@auth_user
+if !@user || !@token
   json.status 401
 else
-  json.status "created"
-  json.extract! @auth_user ,:email
+  json.status "signed_in"
+  json.access_token @token
 end

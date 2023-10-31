@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  the_move: 1
+  move_column: 1
+  move_row: 1
+
+two:
+  game: two
+  the_move: 1
+  move_column: 1
+  move_row: 1
