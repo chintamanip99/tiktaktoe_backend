@@ -25,7 +25,9 @@ module Tiktaktoe
     config.hosts << "192.168.10.100"
     config.hosts << "192.168.1.9"
     config.hosts << "192.168.1.5"
-    config.action_cable.allowed_request_origins = ['http://192.168.10.100:3001/','http://192.168.1.3:8081/','http://192.168.1.9:8081/','http://192.168.1.5:3002/']
+    config.hosts << "192.168.1.19"
+    config.hosts << "172.26.10.24"
+    config.action_cable.allowed_request_origins = ['http://192.168.1.19:3002/','http://192.168.10.100:3001/','http://192.168.1.3:8081/','http://192.168.1.9:8081/','http://192.168.1.5:3002/','http://172.26.10.24:3002/']
 
     # expose_headers = ['Access-Token', 'Uid','Client','Token-Type','Expiry', 'Authorization']
     #
