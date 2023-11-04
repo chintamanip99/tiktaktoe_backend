@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/fetch_moves' => 'moves#fetch_moves'
   get '/fetch_game' => 'games#fetch_game'
   get '/fetch_games' => 'games#fetch_games'
+  post '/users/signup' => 'registration#create'
 end
