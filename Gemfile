@@ -62,3 +62,7 @@ gem 'devise', "4.8.1"
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'redis'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
