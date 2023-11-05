@@ -3,7 +3,7 @@ git_source(:github) { |repo| "http://github.com/#{repo}.git" }
 
 
 
-# gem 'mysql2', '~> 0.5.5'
+gem 'mysql2'
 gem 'bcrypt'
 gem 'jwt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
