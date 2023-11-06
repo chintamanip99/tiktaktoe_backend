@@ -301,7 +301,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors
   rack-mini-profiler (~> 2.0)
-  rails (~> 7.0.0)
+  rails (~> 7.0.8)
   redis
   sass-rails (>= 6)
   selenium-webdriver
