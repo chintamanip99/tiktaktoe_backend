@@ -29,7 +29,7 @@ module Tiktaktoe
     config.hosts << "172.26.10.24"
     config.hosts << "15.206.26.154"
     config.hosts << "tiktaktoe-backend.notmaniac.com"
-    config.action_cable.allowed_request_origins = ['http://192.168.1.19:3002/','http://192.168.10.100:3001/','http://192.168.1.3:8081/','http://192.168.1.9:8081/','http://192.168.1.5:3002/','http://15.206.26.154:3002/',"https://654686ed17130a3991ac7b7f--cmptiktaktoe.netlify.app/"]
+    config.action_cable.allowed_request_origins = ['http://192.168.1.19:3002/','http://192.168.10.100:3001/','http://192.168.1.3:8081/','http://192.168.1.9:8081/','http://192.168.1.5:3002/','http://15.206.26.154:3002/',"http://tiktaktoe.notmaniac.com/"]
 
     # expose_headers = ['Access-Token', 'Uid','Client','Token-Type','Expiry', 'Authorization']
     #
