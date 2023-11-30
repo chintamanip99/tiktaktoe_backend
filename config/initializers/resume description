@@ -1,0 +1,7 @@
+Developed a full-stack Tic-Tac-Toe game using Ruby on Rails for the backend and React for the frontend.
+Implemented real-time multiplayer functionality using WebSocket technology.
+Deployed the game on AWS and attached a domain name: http://tiktaktoe.notmaniac.com and received positive user feedback (by playing this game with friends).
+Technologies: Ruby on Rails - Action Cable, React Js - Action cable npm package, WebSocket , HTML, CSS, Git.
+GitHub Repositories:
+Backend ROR: https://github.com/chintamanip99/tiktaktoe_backend
+Frontend Rails: https://github.com/chintamanip99/tiktaktoe_frontend
