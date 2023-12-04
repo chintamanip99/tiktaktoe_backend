@@ -13,4 +13,10 @@ class Game < ApplicationRecord
       user2
     end
   end
+
+  def set_winner(user)
+    if(user == user1)
+      self.update(winner: 1)
+    end
+  end
 end

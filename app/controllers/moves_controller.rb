@@ -7,7 +7,17 @@ class MovesController < ApplicationController
       move_column: params['move_column'],
       move_row: params['move_row']
     )
-    ActionCable.server.broadcast("move_#{params[:game_id]}", @move)
+    if(Move.where(game_id: params['game_id'], the_move: params['move_name']).count >= Game.find(@move.game_id).dimensions)
+      service = WinnerCalculatorService.new(@move.game_id, @move.the_move)
+      won = service.check_if_winner
+    end
+    hash = {}
+    if(won)
+      hash[:winner]=current_user.email
+    end
+    hash[:move] = @move
+    ActionCable.server.broadcast("move_#{params[:game_id]}", hash)
+    Game.find(@move.game_id).set_winner(current_user)
     render json: @move
   end
 
