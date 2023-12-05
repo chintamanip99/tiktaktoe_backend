@@ -2,9 +2,9 @@ default: &default
   adapter: mysql2
   pool: 10
   timeout: 5000
-  username: root2
-  password: mypassword
-  host: 127.0.0.1
+  username: patilcm
+  password: Mypassword@1234
+  host: patilcm.mysql.pythonanywhere-services.com
   encoding: utf8mb4
   collation: utf8mb4_unicode_ci
 
