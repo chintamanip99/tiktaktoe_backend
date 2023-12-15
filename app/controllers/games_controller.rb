@@ -7,6 +7,7 @@ class GamesController < ApplicationController
            user1: current_user,
            user2: User.find_by_email(params['email_user2'])
          )
+         ActionCable.server.broadcast("game_user#{@game.user2.id}", @game.id)
        end
   end
 
